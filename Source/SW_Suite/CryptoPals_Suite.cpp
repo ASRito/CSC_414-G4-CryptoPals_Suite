@@ -20,7 +20,19 @@ Start Date:        Sept. 7, 2024
 Completion Date:   Nov. 12, 2024 
 */
 
+#include "File_Parser.h"
+#include "TestingTemplates.h"
+
 #include "BaseConversions.h"
+//#include "FixedXOR.h"
+//#include "SingleByteXOR.h"
+//#include "RepeatingKeyXOR.h"
+//#include "AES128.h"
+//#include "ECBDetection.h"
+
+
+#include <iostream>
+#include <string>
 
 //Task 1: Convert between base encoding systems (binary, hexadecimal, base 64, and unicode)
 void Task1Eval()
