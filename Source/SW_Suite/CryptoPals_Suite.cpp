@@ -24,7 +24,7 @@ Completion Date:   Nov. 12, 2024
 #include "TestingTemplates.h"
 
 #include "BaseConversions.h"
-//#include "FixedXOR.h"
+#include "FixedXOR.h"
 //#include "SingleByteXOR.h"
 //#include "RepeatingKeyXOR.h"
 //#include "AES128.h"
@@ -60,7 +60,18 @@ void Task1Eval()
 //Task 2: Takes two equal-length buffers and produces their XOR combination (with wrappers for multiple encoding bases)
 void Task2Eval()
 {
-    //INSERT TASK 2 EVAL CODE HERE
+    string inputHexA = "1c0111001f010100061a024b53535009181c";
+    string inputHexB = "686974207468652062756c6c277320657965";
+    string outputHex = FixedXOR_hex(inputHexA, inputHexB);
+    string expectedHex = "746865206b696420646f6e277420706c6179";
+
+    cout << endl << endl << endl << endl;
+    cout << "Task 2 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    cout << "Input Hexadecimal A: " << inputHexA << endl << "..." << endl;
+    cout << "Input Hexadecimal B: " << inputHexB << endl << "..." << endl << endl;
+    cout << "Fixed XOR encrypted Output: " << outputHex << endl;
+    cout << "Expected output:            " << expectedHex << endl;
+    cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
 }
 
 //Task 3: Find the single-byte key that a given ciphertext has been XOR'd against
