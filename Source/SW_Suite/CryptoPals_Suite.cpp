@@ -26,7 +26,7 @@ Completion Date:   Nov. 12, 2024
 #include "BaseConversions.h"
 #include "FixedXOR.h"
 #include "SingleByteXOR.h"
-//#include "RepeatingKeyXOR.h"
+#include "RepeatingKeyXOR.h"
 #include "AES128.h"
 #include "ECBDetection.h"
 
@@ -97,7 +97,20 @@ void Task4Eval()
 //Task 5: Implement an accurate repeating-key XOR encryption / decryption oracle
 void Task5Eval()
 {
-    //INSERT TASK 5 EVAL CODE HERE
+    string inputTextA = "Burning 'em, if you ain't quick and nimble\nI go crazy when I hear a cymbal";
+    string key = "ICE";
+
+    string outputASCII = repeatingKeyXORCipher(inputTextA, key);
+    string ExpectOutput = "0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a26226324272765272a282b2f20430a652e2c652a3124333a653e2b2027630c692b20283165286326302e27282f";
+
+    cout << endl << endl << endl << endl;
+    cout << "Task 5 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    
+    cout << "Input Text: " << inputTextA << endl << "..." << endl;
+    cout << "Repeating Key XOR encrypted output: " << endl << outputASCII << endl;
+    cout << "Output encoded in hex: " << endl << ASCII_str_to_hex_str(outputASCII) << endl << endl;
+    cout << "Expected output (hex): " << endl << ExpectOutput << endl;
+    cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
 }
 
 //Task 6: Brute-force attack a repeating-key XOR encrypted ciphertext to find the key and plaintext
@@ -163,7 +176,17 @@ void Task7Eval()
 //        Electronic CodeBook (ECB) encryption amongst surplus data
 void Task8Eval()
 {
-    //INSERT TASK 8 EVAL CODE HERE
+    string inputFile = "ECBDetectFile.txt";
+    string inputTextA = ECBDET_INPUT_TEMPLATE;
+
+    cout << endl << endl << endl << endl;
+    cout << "Task 8 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    cout << "Input File name: " << inputFile << endl << "..." << endl;
+    cout << "Input File Contents... " << endl << inputTextA << endl << endl;
+    bool is_ecb = detect_ecb(inputTextA);
+    cout << ((is_ecb) ? "" : "NO ") << "ECB DETECTED" << endl;
+    cout << "Expected: Yes, ECB encryption is present." << endl;
+    cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
 }
 
 }
