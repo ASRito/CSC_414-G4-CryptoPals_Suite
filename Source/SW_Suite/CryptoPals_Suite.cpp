@@ -97,8 +97,6 @@ void Task4Eval()
 //Task 5: Implement an accurate repeating-key XOR encryption / decryption oracle
 void Task5Eval()
 {
-void Task5Eval()
-{
     string inputTextA = "Burning 'em, if you ain't quick and nimble\nI go crazy when I hear a cymbal";
     string key = "ICE";
 
@@ -113,7 +111,6 @@ void Task5Eval()
     cout << "Output encoded in hex: " << endl << ASCII_str_to_hex_str(outputASCII) << endl << endl;
     cout << "Expected output (hex): " << endl << ExpectOutput << endl;
     cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
-}
 }
 
 //Task 6: Brute-force attack a repeating-key XOR encrypted ciphertext to find the key and plaintext
