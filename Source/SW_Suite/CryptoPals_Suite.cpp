@@ -25,7 +25,7 @@ Completion Date:   Nov. 12, 2024
 
 #include "BaseConversions.h"
 #include "FixedXOR.h"
-//#include "SingleByteXOR.h"
+#include "SingleByteXOR.h"
 //#include "RepeatingKeyXOR.h"
 #include "AES128.h"
 //#include "ECBDetection.h"
@@ -77,7 +77,15 @@ void Task2Eval()
 //Task 3: Find the single-byte key that a given ciphertext has been XOR'd against
 void Task3Eval()
 {
-    //INSERT TASK 3 EVAL CODE HERE
+    string inputHexA = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
+    string ExpectedMessage = "Cooking MC's like a pound of bacon";
+
+    cout << endl << endl << endl << endl;
+    cout << "Task 3 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    cout << "Input Hexadecimal: " << inputHexA << endl << "..." << endl;
+    DecryptSingleByteXOR(inputHexA, 1);
+    cout << endl << "Expected plaintext: " << ExpectedMessage << endl;
+    cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
 }
 
 //Task 4: Detect the presence of a single-byte XOR encrypted string amongst surplus data
