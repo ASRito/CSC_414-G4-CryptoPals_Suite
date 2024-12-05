@@ -103,7 +103,32 @@ void Task5Eval()
 //Task 6: Brute-force attack a repeating-key XOR encrypted ciphertext to find the key and plaintext
 void Task6Eval()
 {
-    //INSERT TASK 6 EVAL CODE HERE
+    string inputTextA = b64_str_to_ASCII_str(RKXOR_INPUT_TEMPLATE);
+    int minKeySize = 2;
+    int maxKeySize = 40;
+    int numKeys = 5;
+
+    cout << endl << endl << endl << endl;
+    cout << "Task 6 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    cout << "Input File Contents... " << endl << inputTextA << endl << endl;
+    cout << "Finding the 5 most likely key size between 2 and 40" << endl << endl;
+
+    cout << "Key Size    | Normalized Edit Distance" << endl;
+    cout << "----------------------------------------" << endl;
+    vector<int> likelyKeySizes = findLikelyKeySizes(inputTextA, minKeySize, maxKeySize, numKeys);
+    cout << "----------------------------------------" << endl;
+
+    cout << "Top " << numKeys << " most likely key sizes:" << endl;
+    for (int i = 0; i < likelyKeySizes.size(); i++) {
+        cout << "Key size " << i + 1 << ": " << likelyKeySizes[i] << endl;
+
+    }
+
+    cout << "Trying key size: " << likelyKeySizes[0] << endl;
+    pair<string, string> decryptionResult = decryptRepeatingKeyXOR(inputTextA, likelyKeySizes[0]);
+    cout << "Decrypted text for key size " << likelyKeySizes[0] << ": " << endl << decryptionResult.second << endl;
+    cout << endl << "Final decryption key guess: " << endl << decryptionResult.first << endl;
+    cout << "---------------------------------------------------" << endl << endl << endl << endl;
 }
 
 //Task 7: Implement an accurate AES-128 decryption oracle
