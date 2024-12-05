@@ -27,7 +27,7 @@ Completion Date:   Nov. 12, 2024
 #include "FixedXOR.h"
 //#include "SingleByteXOR.h"
 //#include "RepeatingKeyXOR.h"
-//#include "AES128.h"
+#include "AES128.h"
 //#include "ECBDetection.h"
 
 
@@ -101,7 +101,29 @@ void Task6Eval()
 //Task 7: Implement an accurate AES-128 decryption oracle
 void Task7Eval()
 {
-    //INSERT TASK 7 EVAL CODE HERE
+    string inputFile = "AES.txt";
+    string inputTextA = AES_INPUT_TEMPLATE;
+    string key = "YELLOW SUBMARINE";
+
+    try {
+        vector<uint8_t> decryptedBytes = decryptB64String(inputTextA, key);
+        string decryptedHex = bytesToHexString(decryptedBytes);
+
+        cout << endl << endl << endl << endl;
+        cout << "Task 7 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+        cout << "Input File name: " << inputFile << endl << "..." << endl << endl;
+        cout << "Input File Contents... " << endl << inputTextA << endl << endl;
+        cout << "Decrypted Hex: " << decryptedHex << endl;
+
+        // Optionally convert to a string
+        string decryptedText = hex_str_to_ASCII_str(decryptedHex);
+        cout << "Decrypted Text: " << endl << decryptedText << endl;
+
+        cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
+    }
+    catch (const exception& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
 }
 
 //Task 8: Use statistical analysis to detect the presence of 
