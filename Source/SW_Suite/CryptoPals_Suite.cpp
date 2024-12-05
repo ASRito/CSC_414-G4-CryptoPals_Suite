@@ -91,7 +91,9 @@ void Task3Eval()
 //Task 4: Detect the presence of a single-byte XOR encrypted string amongst surplus data
 void Task4Eval()
 {
-    //INSERT TASK 4 EVAL CODE HERE
+    cout << "Task 4 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    SBXOR_DetectionAlgorithm(SBXOR_INPUT_TEMPLATE);
+    cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
 }
 
 //Task 5: Implement an accurate repeating-key XOR encryption / decryption oracle
