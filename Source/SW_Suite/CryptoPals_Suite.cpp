@@ -28,7 +28,7 @@ Completion Date:   Nov. 12, 2024
 #include "SingleByteXOR.h"
 //#include "RepeatingKeyXOR.h"
 #include "AES128.h"
-//#include "ECBDetection.h"
+#include "ECBDetection.h"
 
 
 #include <iostream>
@@ -163,7 +163,19 @@ void Task7Eval()
 //        Electronic CodeBook (ECB) encryption amongst surplus data
 void Task8Eval()
 {
-    //INSERT TASK 8 EVAL CODE HERE
+    string inputFile = "ECBDetectFile.txt";
+    string inputTextA = ECBDET_INPUT_TEMPLATE;
+
+    cout << endl << endl << endl << endl;
+    cout << "Task 8 Evaluation: _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl;
+    cout << "Input File name: " << inputFile << endl << "..." << endl;
+    cout << "Input File Contents... " << endl << inputTextA << endl << endl;
+    bool is_ecb = detect_ecb(inputTextA);
+    cout << ((is_ecb) ? "" : "NO ") << "ECB DETECTED" << endl;
+    cout << "Expected: Yes, ECB encryption is present." << endl;
+    cout << " _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" << endl << endl << endl;
+}
+
 }
 
 //Run menu selection program for preforming and re-performing base task evaluation tests
